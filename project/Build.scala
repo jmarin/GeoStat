@@ -1,18 +1,16 @@
 import sbt._
 import Keys._
-import PlayProject._
 
-object ApplicationBuild extends Build {
+object GeoStatBuild extends Build {
+  
+  lazy val root = Project(id="GeoStat", 
+			base = file(".")) aggregate(geoStatWeb,geoStatPlugins)
 
-    val appName         = "GeoStat"
-    val appVersion      = "1.0-SNAPSHOT"
+  lazy val geoStatWeb = Project(id="geoStatWeb", 
+			base = file("GeoStatWeb"))
 
-    val appDependencies = Seq(
-      // Add your project dependencies here,
-    )
+  lazy val geoStatPlugins = Project(id="geoStatPlugins", 
+			base = file("GeoStatPlugins"))
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      // Add your own project settings here      
-    )
 
 }
