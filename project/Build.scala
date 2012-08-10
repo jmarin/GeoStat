@@ -9,8 +9,8 @@ object GeoStatBuild extends Build {
   lazy val geoStatWeb = Project(id="geoStatWeb", 
 			base = file("GeoStatWeb"))
 
-  lazy val geoStatPlugins = Project(id="geoStatPlugins", 
-			base = file("GeoStatPlugins"))
+  lazy val geoStatPlugins = Project(id="geoStatAgents", 
+			base = file("GeoStatAgents"))
 
 
 }
