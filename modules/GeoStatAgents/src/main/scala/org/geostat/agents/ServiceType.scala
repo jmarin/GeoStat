@@ -1,4 +1,4 @@
-package org.geostat.plugins
+package org.geostat.agents
 
 sealed trait ServiceType { def name: String }
 case class WMS extends ServiceType { val name = "WMS" }
