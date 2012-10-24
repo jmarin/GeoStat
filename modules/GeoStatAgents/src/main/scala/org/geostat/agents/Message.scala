@@ -22,7 +22,7 @@ case object OWS extends Category {val name = "OWS"}
 case object REST extends Category {val name = "REST"}
 case object OTHER extends Category {val name = "OTHER"}
 
-case class RequestData(id:Long, status:Status, category:Category, path:String, queryString:String, httpMethod:String, startTime:DateTime, endTime:DateTime, totalTime:Long, remoteAddress:String, remoteHost:String, internalHost:String, remoteUser:String, remoteUserAgent:String, remoteCountry:String, remoteCity:String, remoteLatitude:Double, remoteLongitude:Double, service:String, operation:String, owsOperation:String, subOperation:String, responseContentType:String, errorMessage:String)
+case class RequestData(id:Long, status:Status, category:Category, path:String, queryString:String, httpMethod:String, startTime:DateTime, endTime:DateTime, totalTime:Long, remoteAddress:String, remoteHost:String, internalHost:String, remoteUser:String, remoteLatitude:Double, remoteLongitude:Double, service:String, operation:String, owsOperation:String, subOperation:String, responseContentType:String, errorMessage:String)
 
 
 

@@ -7,6 +7,7 @@ import akka.actor.Props
 import models.PingActor
 import org.geostat.agents._
 import akka.util.duration._
+import org.joda.time.DateTime
 
 object Global extends GlobalSettings {
 
@@ -18,11 +19,15 @@ object Global extends GlobalSettings {
 
     val deadMessage = PingMessage(false)
 
+    val rd = new RequestData(1, FINISHED, OWS, "http://path", "queryString", "GET", new DateTime(), new DateTime(), 0, "remoteAddress", "remoteHost", "internalHost", "remoteUser", 45.0, -77.5, "WMS", "GetMap", "", "", "image/png", "")
+
+    pingActor ! rd
+
     system.scheduler.schedule(0 milliseconds, 60000 milliseconds, pingActor, aliveMessage)
   }
 
   override def onStop(app: Application) {
-   // pingActor ! deadMessage
+    // pingActor ! deadMessage
     Logger.info("GeoStat stopping")
   }
 

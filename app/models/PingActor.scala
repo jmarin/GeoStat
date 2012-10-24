@@ -23,6 +23,8 @@ class PingActor extends Actor {
       println("Application is dead!!!")
     }
 
+    case rd:RequestData => println(rd.toString)
+
     case _ => {
       println("Message not recognized")
 
