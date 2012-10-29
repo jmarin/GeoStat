@@ -11,6 +11,7 @@ object ApplicationBuild extends Build {
     val geoStatAgents = Project("geoStatAgents", file("modules/GeoStatAgents"))
 
     val appDependencies = Seq(
+      "com.typesafe.akka" % "akka-remote" % "2.0.3"
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(

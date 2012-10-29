@@ -10,10 +10,13 @@ import org.geostat.agents._
 import java.util.Calendar
 import java.text.SimpleDateFormat
 
-
 class PingActor extends Actor {
 
   def receive = {
+
+    case "hello" =>
+      println("HEY THERE")
+      sender ! "World"
 
     case PingMessage(true) => {
       println("Application is alive at " + Utils.getCurrentTime)
@@ -23,7 +26,7 @@ class PingActor extends Actor {
       println("Application is dead!!!")
     }
 
-    case rd:RequestData => println(rd.toString)
+    case rd: RequestData => println(rd.toString)
 
     case _ => {
       println("Message not recognized")
